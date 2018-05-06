@@ -6,8 +6,8 @@ const sponsorsServices = require("../services/sponsors.services");
 const apiPrefix = "/api/sponsors";
 module.exports = {
   readAll: readAll,
-  getByEmail: getByEmail,
-  getById: getById,
+  readByEmail: readByEmail,
+  readById: readById,
   update: update,
   del: del
 };
@@ -41,7 +41,7 @@ function readAll(req, res) {
       res.status(500).send(new responses.ErrorResponse(err));
     });
 }
-function getByEmail(req, res) {
+function readByEmail(req, res) {
   sponsorsServices
     .getByEmail(req.model.email)
     .then(data => {
@@ -55,7 +55,7 @@ function getByEmail(req, res) {
       res.status(500).send(error);
     });
 }
-function getById(req, res) {
+function readById(req, res) {
   sponsorsServices
     .getById(req.params.id)
     .then(sponsor => {
