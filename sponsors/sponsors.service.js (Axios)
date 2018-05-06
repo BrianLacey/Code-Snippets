@@ -1,3 +1,6 @@
+/* AJAX logic utilizing the Axios library for asynchronous functionality.
+Also demonstrates the use of environment variables. */
+
 import axiosInstance from "../config/axios.config";
 // ... Code contributed from another team member.
 
