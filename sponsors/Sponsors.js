@@ -1,4 +1,4 @@
-/* Sponsors container component in which the SponsorsForm component is inserted and the list of sponsors from the API GET call are displayed. */
+/* Sponsors container component in which the SponsorsForm component is inserted and the list of sponsors from the API GET call are displayed. */ 
 
 import React, { Component } from "react";
 import SponsorsForm from "./SponsorsForm";
