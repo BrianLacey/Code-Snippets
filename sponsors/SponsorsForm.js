@@ -1,3 +1,6 @@
+/* SponsorsForm component where the majority of RESTful API calls are made
+relating to sponsor data, including the creation, updates, and deletions of sponsor data. */
+
 import React, { Component } from "react";
 import * as validationHelper from "../../helpers/validation.helper";
 import * as SponsorsService from "../../services/sponsors.service";
