@@ -1,0 +1,38 @@
+/* A function that checks to see if the social media user already has
+an account in our app. If null is returned to passport.js,
+a profile is created. I am not the original author but I am
+responsible for making the function dynamic for logins from
+multiple social media. */
+
+const users = require("../models/users");
+const mongodb = require("../mongodb");
+const conn = mongodb.connection;
+const ObjectId = mongodb.ObjectId;
+const crypto = require("crypto");
+const hasher = require("../helpers/hasher");
+const exceptionLoggerService = require("./exceptionLogger.service");
+const validateDoc = require("../helpers/validate");
+const Exception = require("../models/exception");
+const moment = require("moment");
+
+module.exports = {
+  // ... Code contributed by other users goes here.
+  readByIdSocialMedia: readByIdSocialMedia
+  // ... Code contributed by other users goes here.
+};
+
+function readByIdSocialMedia(userProfile) {
+  let socialMedia = `${userProfile.provider}._id`;
+  return conn
+    .db()
+    .collection("users")
+    .findOne({ [socialMedia]: userProfile.id })
+    .then(user => {
+      if (user) {
+        user._id = user._id.toString();
+        return user._id;
+      } else {
+        return null;
+      }
+    });
+}
