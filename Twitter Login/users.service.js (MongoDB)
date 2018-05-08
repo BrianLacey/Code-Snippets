@@ -16,10 +16,12 @@ const Exception = require("../models/exception");
 const moment = require("moment");
 
 module.exports = {
-  // ... Code contributed by other users goes here.
+  // ... Code contributed by other team members goes here.
   readByIdSocialMedia: readByIdSocialMedia
-  // ... Code contributed by other users goes here.
+  // ... Code contributed by other team members goes here.
 };
+
+// ... Code contributed by other team members goes here.
 
 function readByIdSocialMedia(userProfile) {
   let socialMedia = `${userProfile.provider}._id`;
@@ -36,3 +38,5 @@ function readByIdSocialMedia(userProfile) {
       }
     });
 }
+
+// ... Code contributed by other team members goes here.
